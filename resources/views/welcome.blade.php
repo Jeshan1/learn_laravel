@@ -20,8 +20,8 @@
         @endif
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div  style="margin: 10px 24px 10px 24px">
-            <h1  style="color: #FF2D20">Hello Laravel Developers</h1>
+        <div class="mx-auto table mt-20">
+            <h1 class="text-2xl">Hello Laravel Developers</h1>
         </div>
     </body>
 </html>
