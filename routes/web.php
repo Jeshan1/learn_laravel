@@ -5,8 +5,19 @@ use App\Http\Controllers\CheckAgeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+use function PHPUnit\Framework\isNumeric;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/parameter/{num}', function($num) {
+    if (is_numeric($num) && $num < 10) {
+        return implode(",", range(1,$num));
+    } else {
+        return "please provide a number less than 10";
+    }
+    
 });
 
 
@@ -15,7 +26,7 @@ Route::group(['prefix'=>'user'], function(){
         return view('about');
     })->name('about');
     
-    Route::get('/home', function () {
+    Route::get('/home', function () {  
         return view('home');
     })->name('home');
 });
