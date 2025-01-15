@@ -2,14 +2,21 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CheckAgeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 use function PHPUnit\Framework\isNumeric;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/', function () {  
+//     return view('home');
+// });
+
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::get('/parameter/{num}', function($num) {
     if (is_numeric($num) && $num < 10) {
@@ -25,10 +32,6 @@ Route::group(['prefix'=>'user'], function(){
     Route::get('/about', function () {
         return view('about');
     })->name('about');
-    
-    Route::get('/home', function () {  
-        return view('home');
-    })->name('home');
 });
 
 Route::get('register', [UserController::class, 'showRegisterForm'])->name('register');
