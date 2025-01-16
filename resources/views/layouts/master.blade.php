@@ -25,6 +25,6 @@
         {{-- content body end  --}}
 
         {{-- footer included  --}}
-        @include('include.footer')
+        @include('include.footer',["author" => "Jeshan Tiwari"])
     </body>
 </html>
