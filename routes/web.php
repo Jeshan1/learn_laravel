@@ -16,7 +16,7 @@ use function PHPUnit\Framework\isNumeric;
 //     return view('home');
 // });
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/parameter/{num}', function($num) {
     if (is_numeric($num) && $num < 10) {
