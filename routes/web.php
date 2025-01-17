@@ -28,11 +28,11 @@ Route::get('/parameter/{num}', function($num) {
 });
 
 
-Route::group(['prefix'=>'user'], function(){
-    Route::get('/about', function () {
-        return view('about');
-    })->name('about');
-});
+// Route::group(['prefix'=>'user'], function(){
+//     Route::get('/about', function () {
+//         return view('about');
+//     })->name('about');
+// });
 
 Route::get('register', [UserController::class, 'showRegisterForm'])->name('register');
 Route::post('register', [UserController::class, 'register']);
